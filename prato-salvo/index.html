@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prato Salvo — Plataforma Completa</title>
+
+<!--
+  ===========================================================================
+  index.html — SHELL / ROUTER da plataforma Prato Salvo
+  ===========================================================================
+  Este arquivo NÃO contém nenhuma regra de negócio das páginas — ele
+  apenas monta a barra de navegação fixa e os 4 <iframe> que carregam,
+  cada um isoladamente, uma das áreas do produto:
+
+      pages/landing/landing.html         -> site institucional
+      pages/cliente/cliente.html         -> app do cliente (mobile)
+      pages/fornecedor/fornecedor.html   -> portal do fornecedor
+      pages/admin/admin.html             -> painel administrativo
+
+  Ver assets/shell/shell.js para a lógica de troca de views e o
+  README.md na raiz do projeto para a visão geral da arquitetura.
+  ===========================================================================
+-->
+
+<link rel="stylesheet" href="assets/shell/shell.css">
+</head>
+<body>
+
+<!-- Barra de navegação fixa: troca entre as 4 áreas da plataforma -->
+<div id="ps-topbar">
+  <div class="ps-logo"><span class="leaf">🌿</span> Prato Salvo</div>
+  <div id="ps-nav">
+    <button data-view="landing" class="on">Início</button>
+    <button data-view="cliente">App Cliente</button>
+    <button data-view="fornecedor">Portal Fornecedor</button>
+    <button data-view="admin">Painel Admin</button>
+  </div>
+</div>
+
+<!-- Cada página vive isolada no seu próprio iframe (ver shell.js) -->
+<div id="ps-views">
+  <div class="ps-view on" id="view-landing">
+    <iframe src="pages/landing/landing.html" title="Prato Salvo — Início"></iframe>
+  </div>
+  <div class="ps-view" id="view-cliente">
+    <iframe src="pages/cliente/cliente.html" title="Prato Salvo — App do Cliente"></iframe>
+  </div>
+  <div class="ps-view" id="view-fornecedor">
+    <iframe src="pages/fornecedor/fornecedor.html" title="Prato Salvo — Portal do Fornecedor"></iframe>
+  </div>
+  <div class="ps-view" id="view-admin">
+    <iframe src="pages/admin/admin.html" title="Prato Salvo — Painel Administrativo"></iframe>
+  </div>
+</div>
+
+<!-- Modal exibido ao clicar em "Entrar" / "Criar conta" na landing -->
+<div id="ps-picker-overlay">
+  <div id="ps-picker">
+    <h3>Entrar no Prato Salvo</h3>
+    <p>Escolha como você quer continuar:</p>
+    <div class="opt" data-view="cliente"><span class="ic">🧺</span> Sou cliente — quero encontrar comida</div>
+    <div class="opt" data-view="fornecedor"><span class="ic">🏬</span> Sou fornecedor — quero anunciar alimentos</div>
+    <div class="opt" data-view="admin"><span class="ic">🛠️</span> Sou da equipe — painel administrativo</div>
+    <button id="ps-picker-close">Cancelar</button>
+  </div>
+</div>
+
+<script src="assets/shell/shell.js"></script>
+</body>
+</html>

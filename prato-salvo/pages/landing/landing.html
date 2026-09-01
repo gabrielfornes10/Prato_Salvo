@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prato Salvo — Comida boa, perto de vencer, esperando por você</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700;9..144,800&family=Public+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<!--
+  PÁGINA: Landing (institucional / portal de entrada)
+  Ponto de entrada público do Prato Salvo. Apresenta o produto,
+  estatísticas de impacto e os dois caminhos principais do usuário:
+  "fornecedor" (quem tem comida sobrando) e "cliente" (quem quer
+  encontrar comida perto). Todo o CSS/JS deste módulo foi extraído
+  para arquivos próprios (ver landing.css e landing.js).
+-->
+<link rel="stylesheet" href="landing.css">
+</head>
+<body>
+
+
+<header>
+  <div class="wrap hbar">
+    <div class="brand" id="ps-brand"><span class="leaf">🌿</span>Prato Salvo</div>
+    <nav class="hnav">
+      <a href="#explorar">Explorar</a>
+      <a href="#como-funciona">Como funciona</a>
+      <a href="#fornecedores">Para fornecedores</a>
+      <a href="#impacto">Impacto</a>
+    </nav>
+    <div class="hactions">
+      <button class="btn btn-ghost" id="ps-entrar">Entrar</button>
+      <button class="btn btn-primary" id="ps-criar-conta">Criar conta</button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow"><span class="pulse"></span> +40 alimentos vencendo nas próximas 24h no RJ</span>
+    <h1>Antes de virar lixo, <em>vira refeição.</em></h1>
+    <p class="lead">Prato Salvo conecta padarias, mercados e produtores com alimentos perto do vencimento a pessoas e ONGs por perto — com desconto ou doação, antes que seja tarde.</p>
+
+    <div class="hero-ctas">
+      <div class="path-card supply" id="ps-card-fornecedor">
+        <div class="picon">🏬</div>
+        <h3>Tenho alimentos a oferecer</h3>
+        <p>Publique produtos vencendo em minutos e evite o prejuízo do descarte.</p>
+        <span class="go">Cadastrar como fornecedor →</span>
+      </div>
+      <div class="path-card buy" id="ps-card-cliente">
+        <div class="picon">🧺</div>
+        <h3>Quero encontrar comida perto</h3>
+        <p>Compre com até 70% de desconto ou receba doações no seu bairro.</p>
+        <span class="go">Explorar perto de mim →</span>
+      </div>
+    </div>
+    <div class="hero-note"><strong>312 fornecedores</strong> já ativos · <strong>6.240 kg</strong> resgatados este mês</div>
+
+    <div class="ticker-shell" data-reveal>
+      <div class="ticker-head">
+        <span class="t-label"><span class="dot-live"></span> Resgates acontecendo agora</span>
+        <span class="t-num" id="live-kg">6.240 kg</span>
+      </div>
+      <div class="track-outer">
+        <div class="track" id="track">
+          <!-- items injected + duplicated by JS -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="stats-section" id="impacto">
+  <div class="wrap stats-row" data-reveal>
+    <div class="sbox"><div class="num" data-count="6240" data-suffix=" kg">0 kg</div><div class="lbl">Alimento resgatado este mês</div></div>
+    <div class="sbox"><div class="num" data-count="312">0</div><div class="lbl">Fornecedores ativos</div></div>
+    <div class="sbox"><div class="num" data-count="4108">0</div><div class="lbl">Pessoas e ONGs atendidas</div></div>
+    <div class="sbox"><div class="num" data-count="18700" data-suffix=" kg CO₂e">0</div><div class="lbl">Emissões evitadas</div></div>
+  </div>
+</section>
+
+<section class="section" id="como-funciona">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="k">Como funciona</span>
+      <h2>Da prateleira à mesa, antes do relógio zerar</h2>
+      <p>Cada anúncio no Prato Salvo carrega um prazo real. É essa urgência que transforma excesso em oportunidade.</p>
+    </div>
+    <div class="steps" data-reveal>
+      <div class="step">
+        <div class="snum">01 · Fornecedor</div>
+        <h3>Publica antes de vencer</h3>
+        <p>Padarias, mercados e produtores anunciam o que sobrou, com preço reduzido ou como doação — em menos de 1 minuto.</p>
+        <span class="step-arrow">→</span>
+      </div>
+      <div class="step">
+        <div class="snum">02 · Comunidade</div>
+        <h3>Reserva perto de você</h3>
+        <p>Clientes e ONGs veem o tempo restante de cada produto e reservam pelo bairro, com o mapa de distância em tempo real.</p>
+        <span class="step-arrow">→</span>
+      </div>
+      <div class="step">
+        <div class="snum">03 · Retirada</div>
+        <h3>Combinada e confirmada</h3>
+        <p>Horário e local combinados no app. O alimento sai do estoque, chega à mesa — e nunca vira desperdício.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="explorar" style="padding-top:0;">
+  <div class="wrap">
+    <div class="cat-band" data-reveal>
+      <div class="cat-top">
+        <div>
+          <h2>O que está prestes a sobrar perto de você</h2>
+          <p>Categorias mais resgatadas nos últimos 7 dias.</p>
+        </div>
+      </div>
+      <div class="cat-grid">
+        <div class="cat-item"><div class="ci">🥬</div><h4>Frutas e verduras</h4><span>128 anúncios</span></div>
+        <div class="cat-item"><div class="ci">🍞</div><h4>Padaria</h4><span>84 anúncios</span></div>
+        <div class="cat-item"><div class="ci">🥛</div><h4>Laticínios</h4><span>57 anúncios</span></div>
+        <div class="cat-item"><div class="ci">🛒</div><h4>Mercearia</h4><span>39 anúncios</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="fornecedores">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="k">Depoimentos</span>
+      <h2>Quem já resgatou junto com a gente</h2>
+    </div>
+    <div class="quotes" data-reveal>
+      <div class="quote">
+        <div class="stars">★★★★★</div>
+        <p>Reduzimos o desperdício da padaria em mais da metade e ainda geramos uma renda extra com o que antes ia pro lixo.</p>
+        <div class="qwho"><div class="qa">PT</div><div><h5>Padaria Trigo Dourado</h5><span>Fornecedor · Rio de Janeiro</span></div></div>
+      </div>
+      <div class="quote">
+        <div class="stars">★★★★★</div>
+        <p>Encontro verduras e frutas frescas com desconto grande toda semana, a menos de 2 km de casa.</p>
+        <div class="qwho"><div class="qa">MF</div><div><h5>Maria F.</h5><span>Cliente · Rio de Janeiro</span></div></div>
+      </div>
+      <div class="quote">
+        <div class="stars">★★★★★</div>
+        <p>As doações do app hoje sustentam parte das nossas refeições semanais para famílias em situação de insegurança alimentar.</p>
+        <div class="qwho"><div class="qa">MS</div><div><h5>ONG Mesa Solidária</h5><span>Parceira · Rio de Janeiro</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0;">
+  <div class="wrap">
+    <div class="final-cta" data-reveal>
+      <div>
+        <h2>Seu alimento ainda tem valor. Vamos salvá-lo?</h2>
+        <p>Leva menos de 2 minutos para publicar seu primeiro anúncio ou encontrar comida perto de você.</p>
+      </div>
+      <div class="final-btns">
+        <button class="btn btn-ghost btn-lg" style="border:1px solid var(--line);" id="ps-cta-fornecedor">Sou fornecedor</button>
+        <button class="btn btn-primary btn-lg" id="ps-cta-cliente">Encontrar comida perto</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <div class="fbrand">🌿 Prato Salvo</div>
+        <p style="font-size:13px;color:var(--ink-soft);max-width:260px;line-height:1.6;">Conectando quem tem alimento sobrando a quem pode salvá-lo, antes que vire desperdício.</p>
+      </div>
+      <div class="fcol">
+        <h5>Plataforma</h5>
+        <a href="#" id="ps-footer-fornecedor">Painel do fornecedor</a>
+        <a href="#" id="ps-footer-cliente">Painel do cliente</a>
+        <a href="#" id="ps-footer-admin">Administração</a>
+      </div>
+      <div class="fcol">
+        <h5>Empresa</h5>
+        <a href="#">Como funciona</a>
+        <a href="#">Impacto</a>
+        <a href="#">Parcerias com ONGs</a>
+      </div>
+      <div class="fcol">
+        <h5>Suporte</h5>
+        <a href="#">Central de ajuda</a>
+        <a href="#">Fale conosco</a>
+        <a href="#">Segurança alimentar</a>
+      </div>
+    </div>
+    <div class="fbottom">
+      <span>© 2026 Prato Salvo. Todos os direitos reservados.</span>
+      <span>Rio de Janeiro, RJ</span>
+    </div>
+  </div>
+</footer>
+
+
+
+
+<!-- Lógica original da página (ticker de resgates ao vivo + contadores) -->
+<script src="landing.js"></script>
+<!-- Ponte de navegação: conecta os CTAs desta página ao shell/router -->
+<script src="landing-bridge.js"></script>
+</body>
+</html>
