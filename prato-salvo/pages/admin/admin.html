@@ -22,21 +22,25 @@
   <aside class="sidebar">
     <div class="brand" id="ps-brand">Prato Salvo <span>Administração</span></div>
     <nav class="nav">
-      <a class="active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="8" height="8" rx="2"/><rect x="13" y="3" width="8" height="8" rx="2"/><rect x="3" y="13" width="8" height="8" rx="2"/><rect x="13" y="13" width="8" height="8" rx="2"/></svg>Visão geral</a>
-      <a><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l1-5h16l1 5"/><path d="M3 9a2 2 0 004 0 2 2 0 004 0 2 2 0 004 0 2 2 0 004 0"/><path d="M5 9v10h14V9"/></svg>Fornecedores<span class="badge">4</span></a>
-      <a><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c1-4 4-5.5 6.5-5.5S14.5 16 15.5 20"/><circle cx="18" cy="9" r="2.5"/><path d="M16 20c.5-2.5 2-4 4-4"/></svg>Clientes</a>
-      <a><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>Transações</a>
-      <a><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3v18"/><path d="M5 4h13l-3 4 3 4H5"/></svg>Moderação<span class="badge">2</span></a>
-      <a><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M12 20V4M20 20v-7"/></svg>Relatórios</a>
-      <a><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 00.3 1.9l.1.1a2 2 0 11-2.8 2.8l-.1-.1a1.7 1.7 0 00-1.9-.3 1.7 1.7 0 00-1 1.5V21a2 2 0 11-4 0v-.1a1.7 1.7 0 00-1-1.6 1.7 1.7 0 00-1.9.3l-.1.1a2 2 0 11-2.8-2.8l.1-.1a1.7 1.7 0 00.3-1.9 1.7 1.7 0 00-1.5-1H3a2 2 0 110-4h.1a1.7 1.7 0 001.5-1 1.7 1.7 0 00-.3-1.9l-.1-.1a2 2 0 112.8-2.8l.1.1a1.7 1.7 0 001.9.3H9a1.7 1.7 0 001-1.5V3a2 2 0 114 0v.1a1.7 1.7 0 001 1.5 1.7 1.7 0 001.9-.3l.1-.1a2 2 0 112.8 2.8l-.1.1a1.7 1.7 0 00-.3 1.9V9a1.7 1.7 0 001.5 1H21a2 2 0 110 4h-.1a1.7 1.7 0 00-1.5 1z"/></svg>Configurações</a>
+      <a class="active" data-section="overview"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="8" height="8" rx="2"/><rect x="13" y="3" width="8" height="8" rx="2"/><rect x="3" y="13" width="8" height="8" rx="2"/><rect x="13" y="13" width="8" height="8" rx="2"/></svg>Visão geral</a>
+      <a data-section="fornecedores"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l1-5h16l1 5"/><path d="M3 9a2 2 0 004 0 2 2 0 004 0 2 2 0 004 0 2 2 0 004 0"/><path d="M5 9v10h14V9"/></svg>Fornecedores<span class="badge">4</span></a>
+      <a data-section="clientes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c1-4 4-5.5 6.5-5.5S14.5 16 15.5 20"/><circle cx="18" cy="9" r="2.5"/><path d="M16 20c.5-2.5 2-4 4-4"/></svg>Clientes</a>
+      <a data-section="transacoes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>Transações</a>
+      <a data-section="moderacao"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3v18"/><path d="M5 4h13l-3 4 3 4H5"/></svg>Moderação<span class="badge">2</span></a>
+      <a data-section="relatorios"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M12 20V4M20 20v-7"/></svg>Relatórios</a>
+      <a data-section="configuracoes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 7v10"/></svg>Configurações</a>
     </nav>
     <div class="side-foot">Logado como<br><strong style="color:#D8D4E4">Equipe Prato Salvo</strong></div>
   </aside>
 
+  <div id="sidebarBackdrop"class="sidebar-backdrop"></div>
+
+
   <main class="main">
     <div class="topbar">
+      <button id="menuToggle" class="menu-toggle" aria-label="Abrir/fechar menu">☰</button>
       <div>
-        <div class="hello">Visão geral da plataforma</div>
+        <div class="hello" id="viewTitle">Visão geral da plataforma</div>
         <div class="sub">Quarta-feira, 19 de agosto de 2026</div>
       </div>
       <div class="top-right">
@@ -46,6 +50,7 @@
       </div>
     </div>
 
+    <section class="view" id="view-overview" data-title="Visão geral da plataforma">
     <div class="stats">
       <div class="stat"><div class="top"><div class="chip" style="background:var(--coral-soft)">⚖️</div><span class="delta up">↑ 12%</span></div><div class="num">6.240 kg</div><div class="lbl">Alimento resgatado</div></div>
       <div class="stat"><div class="top"><div class="chip" style="background:var(--purple-soft)">🏬</div><span class="delta up">↑ 8 novos</span></div><div class="num">312</div><div class="lbl">Fornecedores ativos</div></div>
@@ -113,9 +118,36 @@
         </tbody>
       </table>
     </div>
+    </section>
+
+     <section class="view" id="view-fornecedores" data-title="Fornecedores" hidden>
+      <div class="sec-head"><h2>Fornecedores</h2></div>
+      <div class="panel"><p style="color:var(--ink-soft)">Gestão de fornecedores em construção.</p></div>
+    </section>
+      <section class="view" id="view-clientes" data-title="Clientes" hidden>
+      <div class="sec-head"><h2>Clientes</h2></div>
+      <div class="panel"><p style="color:var(--ink-soft)">Gestão de clientes em construção.</p></div>
+    </section>
+     <section class="view" id="view-transacoes" data-title="Transações" hidden>
+      <div class="sec-head"><h2>Transações</h2></div>
+      <div class="panel"><p style="color:var(--ink-soft)">Histórico de transações em construção.</p></div>
+    </section>
+     <section class="view" id="view-moderacao" data-title="Moderação" hidden>
+      <div class="sec-head"><h2>Moderação</h2></div>
+      <div class="panel"><p style="color:var(--ink-soft)">Fila de moderação em construção.</p></div>
+    </section>
+      <section class="view" id="view-relatorios" data-title="Relatórios" hidden>
+      <div class="sec-head"><h2>Relatórios</h2></div>
+      <div class="panel"><p style="color:var(--ink-soft)">Relatórios em construção.</p></div>
+    </section>
+      <section class="view" id="view-configuracoes" data-title="Configurações" hidden>
+        <div class="sec-head"><h2>Configurações</h2></div>
+        <div class="panel"><p style="color:var(--ink-soft)">Configurações em construção.</p></div>
+    </section>
   </main>
 </div>
 
+<script src="admin.js"></script>
 <!-- Ponte de navegação: leva de volta à Landing Page via shell/router -->
 <script src="admin-bridge.js"></script>
 </body>
