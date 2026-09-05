@@ -104,7 +104,6 @@
 
   /* ---------- categories / explore ---------- */
   .cat-band{background:var(--forest);border-radius:26px;padding:56px 48px;color:#fff;position:relative;overflow:hidden;}
-  .cat-band::after{content:"";position:absolute;bottom:-120px;left:-80px;width:340px;height:340px;border-radius:50%;background:radial-gradient(circle, #2C6B52 0%, transparent 70%);}
   .cat-top{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:32px;flex-wrap:wrap;gap:20px;position:relative;}
   .cat-top h2{font-family:'Fraunces',serif;font-size:clamp(22px,2.6vw,30px);font-weight:600;margin:0;max-width:420px;}
   .cat-top p{color:#C7D8C9;font-size:14px;max-width:340px;margin:8px 0 0;}
