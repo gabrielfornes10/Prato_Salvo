@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prato Salvo — Portal do Fornecedor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+<!--
+  PÁGINA: Portal do Fornecedor
+  Painel usado por padarias, mercados e produtores para gerenciar
+  produtos perto do vencimento, acompanhar vendas/doações e saldo
+  disponível. Página estática no original (sem JS próprio) — o único
+  comportamento dinâmico adicionado aqui é a navegação de volta para
+  a home, isolada em fornecedor-bridge.js.
+-->
+<link rel="stylesheet" href="fornecedor.css">
+</head>
+<body>
+
+
+<header>
+  <div class="brand" id="ps-brand">Prato Salvo</div>
+  <nav class="top-nav">
+    <a class="active">Painel</a><a>Produtos</a><a>Pedidos</a><a>Financeiro</a><a>Relatórios</a>
+  </nav>
+  <div class="top-actions">
+    <div class="icon-btn">🔔<span class="dot"></span></div>
+    <div class="avatar">HB</div>
+  </div>
+</header>
+
+<main>
+  <div class="hero">
+    <div class="hero-top">
+      <div>
+        <div class="eyebrow">Saldo disponível</div>
+        <div class="balance">R$ 1.480,00</div>
+        <div class="sub">Próximo repasse em 3 dias · Hortifruti Boa Vista</div>
+      </div>
+      <button>Sacar agora</button>
+    </div>
+  </div>
+
+  <div class="stats">
+    <div class="stat"><div class="chip" style="background:var(--coral-light)">🍞</div><div class="num">18</div><div class="lbl">Produtos ativos</div><span class="delta">↑ 4 esta semana</span></div>
+    <div class="stat"><div class="chip" style="background:var(--purple-light)">⚖️</div><div class="num">340 kg</div><div class="lbl">Redistribuídos no mês</div><span class="delta">↑ 12%</span></div>
+    <div class="stat"><div class="chip" style="background:#FFF3D6">🍽️</div><div class="num">612</div><div class="lbl">Refeições impactadas</div><span class="delta">↑ 9%</span></div>
+    <div class="stat"><div class="chip" style="background:#E9F9EF">💳</div><div class="num">R$ 1.480</div><div class="lbl">Receita este mês</div><span class="delta">↑ 15%</span></div>
+  </div>
+
+  <div class="sec-head">
+    <h2>Produtos vencendo</h2>
+    <button class="fab">＋ Novo produto</button>
+  </div>
+  <div class="grid">
+    <div class="card">
+      <div class="img"><span class="badge" style="background:var(--red)">Vence em 8h</span>🍅</div>
+      <div class="body">
+        <h3>Caixa de tomates (12kg)</h3>
+        <div class="meta">Lote #A102 · Venda</div>
+        <div class="foot"><span class="price">R$ 18,00</span><div class="acts"><span class="icb">✏️</span><span class="icb">⏸</span></div></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="img p"><span class="badge" style="background:var(--amber)">Vence em 3d</span>🍞</div>
+      <div class="body">
+        <h3>Pães artesanais (20un)</h3>
+        <div class="meta">Lote #B045 · Doação</div>
+        <div class="foot"><span class="price">Doação</span><div class="acts"><span class="icb">✏️</span><span class="icb">⏸</span></div></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="img"><span class="badge" style="background:var(--green)">Vence em 7d</span>🥬</div>
+      <div class="body">
+        <h3>Folhas verdes sortidas (8kg)</h3>
+        <div class="meta">Lote #C220 · Venda</div>
+        <div class="foot"><span class="price">R$ 22,00</span><div class="acts"><span class="icb">✏️</span><span class="icb">⏸</span></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec-head"><h2>Atividade recente</h2></div>
+  <div class="feed">
+    <div class="frow">
+      <div class="ficon" style="background:var(--coral-light)">🛒</div>
+      <div class="ftxt"><div class="t1">Venda · Caixa de tomates (12kg)</div><div class="t2">Restaurante Sabor Caseiro</div></div>
+      <div><div class="famt">+R$ 18,00</div><div class="ftime">há 12 min</div></div>
+    </div>
+    <div class="frow">
+      <div class="ficon" style="background:var(--purple-light)">🎁</div>
+      <div class="ftxt"><div class="t1">Doação reservada · Pães artesanais</div><div class="t2">ONG Mesa Solidária</div></div>
+      <div><div class="famt">—</div><div class="ftime">há 2h</div></div>
+    </div>
+    <div class="frow">
+      <div class="ficon" style="background:var(--coral-light)">🛒</div>
+      <div class="ftxt"><div class="t1">Venda · Folhas verdes sortidas</div><div class="t2">Maria F.</div></div>
+      <div><div class="famt">+R$ 22,00</div><div class="ftime">há 5h</div></div>
+    </div>
+  </div>
+</main>
+
+<!-- Ponte de navegação: leva de volta à Landing Page via shell/router -->
+<script src="fornecedor-bridge.js"></script>
+</body>
+</html>
