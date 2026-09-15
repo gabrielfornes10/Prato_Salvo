@@ -19,16 +19,12 @@
   body{margin:0;font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink);}
   h1,h2,h3,.disp{font-family:'Poppins',sans-serif;}
   a{text-decoration:none;color:inherit;}
-<<<<<<< HEAD
-  .app{display:grid;grid-template-columns:252px 1fr;min-height:100vh;}
 
-  .sidebar{background:var(--dark);color:#B5B0C2;padding:26px 18px;display:flex;flex-direction:column;gap:32px;}
-=======
   .app{min-height:100vh;position:relative;}
 
   .sidebar{background:var(--dark);color:#B5B0C2;padding:26px 18px;display:flex;flex-direction:column;gap:32px;position:fixed;top:0;left:0;bottom:0;width:252px;z-index:60;transform:translateX(0);transition:transform .25s ease;}
   .app.sidebar-closed .sidebar{transform:translateX(-100%);}
->>>>>>> 8c8d819102667cb6e6f198c6156a9f15ad628600
+
   .brand{font-family:'Poppins',sans-serif;font-weight:800;font-size:18px;color:#fff;}
   .brand span{display:block;font-family:'Inter',sans-serif;font-size:10.5px;font-weight:600;text-transform:uppercase;letter-spacing:1.2px;color:#736D82;margin-top:3px;}
   .nav{display:flex;flex-direction:column;gap:4px;}
@@ -40,13 +36,12 @@
   .badge{margin-left:auto;background:var(--coral);color:#fff;font-size:10px;font-weight:800;padding:2px 7px;border-radius:var(--r-full);}
   .side-foot{margin-top:auto;font-size:11.5px;color:#5C5768;border-top:1px solid #232030;padding-top:16px;}
 
-<<<<<<< HEAD
-  .main{padding:30px 38px 60px;}
-=======
+
   .main{padding:30px 38px 60px;margin-left:252px;transition:margin-left .25s ease;}
   .app.sidebar-closed .main{margin-left:0;}
->>>>>>> 8c8d819102667cb6e6f198c6156a9f15ad628600
+
   .topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:26px;flex-wrap:wrap;gap:14px;}
+  .topbar-left{display:flex;align-items:center;gap:14px;}
   .hello{font-size:24px;font-weight:700;}
   .sub{color:var(--ink-soft);font-size:13px;margin-top:3px;}
   .top-right{display:flex;gap:10px;align-items:center;}
@@ -99,8 +94,7 @@
   .approve{background:var(--purple);color:#fff;}
   .reject{background:#F2F0F6;color:var(--ink-soft);}
 
-<<<<<<< HEAD
-=======
+
   /* -------------------- menu retrátil -------------------- */
 
 .menu-toggle{
@@ -122,4 +116,4 @@
   .app:not(.sidebar-closed) .sidebar-backdrop{display:block;}
 }
 
->>>>>>> 8c8d819102667cb6e6f198c6156a9f15ad628600
+

@@ -49,6 +49,20 @@
   menuToggle.addEventListener("click", toggleSidebar);
   backdrop.addEventListener("click", closeSidebar);
 
+  // "clicar fora fecha" — funciona em qualquer tamanho de tela, não só no mobile
+document.addEventListener("click", function (evento) {
+  // se o menu já está fechado, não há nada a fazer
+  if (app.classList.contains("sidebar-closed")) return;
+
+  var sidebarEl = document.querySelector(".sidebar");
+  var cliqueDentroDaSidebar = sidebarEl.contains(evento.target);
+  var cliqueNoBotaoDeMenu = menuToggle.contains(evento.target);
+
+  if (!cliqueDentroDaSidebar && !cliqueNoBotaoDeMenu) {
+    closeSidebar();
+  }
+});
+
   // -------------------- troca de seções --------------------
 
   function mostrarSecao(nome) {
