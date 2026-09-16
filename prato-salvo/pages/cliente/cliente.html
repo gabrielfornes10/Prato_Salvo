@@ -16,121 +16,259 @@
 <link rel="stylesheet" href="cliente.css">
 </head>
 <body>
+<header>
+  <div class="hbar">
+    <div class="brand" id="ps-brand" title="Voltar para a página inicial">🍅 Prato Salvo</div>
+    <div class="hsearch">🔍 <input placeholder="Buscar alimentos, fornecedores…" id="search-input"></div>
+    <nav class="hnav">
+      <a class="active">Início</a>
+      <a>Buscar</a>
+      <a data-opens-bag="pedidos">Pedidos</a>
+      <a>Doações</a>
+    </nav>
+    <div class="hactions">
+      <div class="loc-chip">📍 Copacabana, RJ ▾</div>
+      <div class="bell">🔔<span class="dot"></span></div>
+      <div class="avatar-sm">M</div>
+    </div>
+  </div>
+</header>
 
+<main>
+  <div class="app">
+    <div class="top-row">
+      <div class="greet">
+        <h2>Oi, Maria 👋</h2>
+        <div class="loc">📍 Copacabana, RJ ▾</div>
+      </div>
+    </div>
 
-<div class="page-label">
-  <div class="pill" id="ps-brand">🍅 Prato Salvo · Cliente</div>
-  <p>Mobile-first · mesma tela funciona como versão responsiva no site</p>
+    <div class="cats">
+      <div class="cat"><div class="circ" style="background:#FFE7DE">🍎</div><span>Frutas</span></div>
+      <div class="cat"><div class="circ" style="background:#F1EAFC">🥖</div><span>Padaria</span></div>
+      <div class="cat"><div class="circ" style="background:#E7F2FF">🧀</div><span>Laticínios</span></div>
+      <div class="cat"><div class="circ" style="background:#E9F9EF">🛒</div><span>Mercado</span></div>
+      <div class="cat"><div class="circ" style="background:#FFF3D6">🎁</div><span>Doações</span></div>
+      <div class="cat"><div class="circ" style="background:#FFE3E1">⏰</div><span>Urgentes</span></div>
+    </div>
+
+    <div class="promo">
+      <div class="eyebrow">Resgate hoje</div>
+      <h3>Até 70% off em alimentos perto de vencer</h3>
+      <a href="#">Ver ofertas →</a>
+    </div>
+
+    <div class="sec-head"><h3>Vencendo hoje ⏰</h3><span class="see">Ver tudo</span></div>
+    <div class="urgent-row">
+      <div class="ucard" data-emoji="🍅" data-name="Caixa de tomates" data-supplier="Hortifruti Boa Vista · 1,2 km" data-price="R$ 18,00">
+        <div class="img"><span class="badge">8h</span>🍅</div>
+        <div class="body"><div class="name">Caixa de tomates</div><div class="price">R$ 18,00</div></div>
+      </div>
+      <div class="ucard" data-emoji="🧀" data-name="Queijos artesanais" data-supplier="Laticínios Serra Verde · 3,4 km" data-price="R$ 14,00">
+        <div class="img"><span class="badge">12h</span>🧀</div>
+        <div class="body"><div class="name">Queijos artesanais</div><div class="price">R$ 14,00</div></div>
+      </div>
+      <div class="ucard" data-emoji="🥛" data-name="Iogurtes naturais" data-supplier="Laticínios Serra Verde · 3,4 km" data-price="R$ 9,90">
+        <div class="img"><span class="badge">6h</span>🥛</div>
+        <div class="body"><div class="name">Iogurtes naturais</div><div class="price">R$ 9,90</div></div>
+      </div>
+      <div class="ucard" data-emoji="🍎" data-name="Maçãs fuji (5kg)" data-supplier="Sítio Bom Fruto · 6,3 km" data-price="Grátis">
+        <div class="img"><span class="badge">1d</span>🍎</div>
+        <div class="body"><div class="name">Maçãs fuji (5kg)</div><div class="price">Grátis</div></div>
+      </div>
+      <div class="ucard" data-emoji="🥖" data-name="Baguetes frescas" data-supplier="Padaria Trigo Dourado · 2,8 km" data-price="R$ 6,50">
+        <div class="img"><span class="badge">14h</span>🥖</div>
+        <div class="body"><div class="name">Baguetes frescas</div><div class="price">R$ 6,50</div></div>
+      </div>
+    </div>
+
+    <div class="sec-head"><h3>Perto de você</h3><span class="see">Ver tudo</span></div>
+    <div class="list">
+      <div class="lcard" data-emoji="🥬" data-name="Folhas verdes sortidas" data-supplier="Hortifruti Boa Vista · 1,2 km" data-price="R$ 22,00">
+        <div class="thumb">🥬</div>
+        <div class="info">
+          <div class="name">Folhas verdes sortidas</div>
+          <div class="supplier">Hortifruti Boa Vista · 1,2 km</div>
+          <div class="tags"><span class="tag venda">Venda</span></div>
+        </div>
+        <div class="right"><div class="price">R$ 22,00</div><button class="heart">🤍</button></div>
+      </div>
+      <div class="lcard" data-emoji="🍞" data-name="Pães artesanais (20un)" data-supplier="Padaria Trigo Dourado · 2,8 km" data-price="Grátis">
+        <div class="thumb">🍞</div>
+        <div class="info">
+          <div class="name">Pães artesanais (20un)</div>
+          <div class="supplier">Padaria Trigo Dourado · 2,8 km</div>
+          <div class="tags"><span class="tag doacao">Doação</span></div>
+        </div>
+        <div class="right"><div class="price">Grátis</div><button class="heart">🤍</button></div>
+      </div>
+      <div class="lcard" data-emoji="🍎" data-name="Maçãs fuji (5kg)" data-supplier="Sítio Bom Fruto · 6,3 km" data-price="Grátis">
+        <div class="thumb">🍎</div>
+        <div class="info">
+          <div class="name">Maçãs fuji (5kg)</div>
+          <div class="supplier">Sítio Bom Fruto · 6,3 km</div>
+          <div class="tags"><span class="tag doacao">Doação</span></div>
+        </div>
+        <div class="right"><div class="price">Grátis</div><button class="heart">🤍</button></div>
+      </div>
+      <div class="lcard" data-emoji="🧀" data-name="Queijos artesanais (1kg)" data-supplier="Laticínios Serra Verde · 3,4 km" data-price="R$ 14,00">
+        <div class="thumb">🧀</div>
+        <div class="info">
+          <div class="name">Queijos artesanais (1kg)</div>
+          <div class="supplier">Laticínios Serra Verde · 3,4 km</div>
+          <div class="tags"><span class="tag venda">Venda</span></div>
+        </div>
+        <div class="right"><div class="price">R$ 14,00</div><button class="heart">🤍</button></div>
+      </div>
+      <div class="lcard" data-emoji="🥛" data-name="Iogurtes naturais (6un)" data-supplier="Laticínios Serra Verde · 3,4 km" data-price="R$ 9,90">
+        <div class="thumb">🥛</div>
+        <div class="info">
+          <div class="name">Iogurtes naturais (6un)</div>
+          <div class="supplier">Laticínios Serra Verde · 3,4 km</div>
+          <div class="tags"><span class="tag venda">Venda</span></div>
+        </div>
+        <div class="right"><div class="price">R$ 9,90</div><button class="heart">🤍</button></div>
+      </div>
+      <div class="lcard" data-emoji="🍅" data-name="Caixa de tomates (12kg)" data-supplier="Hortifruti Boa Vista · 1,2 km" data-price="R$ 18,00">
+        <div class="thumb">🍅</div>
+        <div class="info">
+          <div class="name">Caixa de tomates (12kg)</div>
+          <div class="supplier">Hortifruti Boa Vista · 1,2 km</div>
+          <div class="tags"><span class="tag venda">Venda</span></div>
+        </div>
+        <div class="right"><div class="price">R$ 18,00</div><button class="heart">🤍</button></div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- ---------------- tela de comprar (modal) ---------------- -->
+<div class="modal-overlay" id="buy-overlay">
+  <div class="buy-modal" role="dialog" aria-modal="true" aria-labelledby="bm-name">
+    <button class="close-x" id="bm-close" aria-label="Fechar">✕</button>
+    <div class="bm-top">
+      <div class="bm-thumb" id="bm-thumb">🍅</div>
+      <div>
+        <p class="bm-name" id="bm-name">Nome do item</p>
+        <div class="bm-supplier" id="bm-supplier">Fornecedor</div>
+      </div>
+    </div>
+
+    <div class="bm-price-row">
+      <div>
+        <div style="font-size:11.5px;color:var(--ink-soft);font-weight:600;margin-bottom:2px;">Preço unitário</div>
+        <div class="bm-price" id="bm-unit-price">R$ 0,00</div>
+      </div>
+      <div class="bm-qty">
+        <button type="button" id="bm-minus" aria-label="Diminuir quantidade">−</button>
+        <span id="bm-qty-val">1</span>
+        <button type="button" id="bm-plus" aria-label="Aumentar quantidade">+</button>
+      </div>
+    </div>
+
+    <div class="bm-section">
+      <h4>Forma de retirada</h4>
+      <div class="bm-opts">
+        <label class="bm-opt sel"><input type="radio" name="bm-retirada" checked> Retirar no local</label>
+        <label class="bm-opt"><input type="radio" name="bm-retirada"> Entrega (taxa a combinar)</label>
+      </div>
+    </div>
+
+    <div class="bm-section">
+      <h4>Pagamento</h4>
+      <div class="bm-opts">
+        <label class="bm-opt sel"><input type="radio" name="bm-pagto" checked> Pix</label>
+        <label class="bm-opt"><input type="radio" name="bm-pagto"> Cartão</label>
+        <label class="bm-opt"><input type="radio" name="bm-pagto"> Na retirada</label>
+      </div>
+    </div>
+
+    <div class="bm-total-row"><span>Total</span><span class="val" id="bm-total">R$ 0,00</span></div>
+
+    <button class="bm-confirm" id="bm-confirm">Confirmar compra</button>
+    <div class="bm-note">Você poderá acompanhar o pedido em "Pedidos"</div>
+  </div>
 </div>
 
-<div class="phone">
-  <div class="screen">
-    <div class="notch"></div>
-    <div class="statusbar"><span>9:41</span><span>●●● 5G 🔋</span></div>
+<!-- ---------------- tela da sacola / pedidos (modal) ---------------- -->
+<div class="modal-overlay" id="bag-overlay">
+  <div class="buy-modal bag-modal" role="dialog" aria-modal="true" aria-labelledby="bag-title">
+    <button class="close-x" id="bag-close" aria-label="Fechar">✕</button>
+    <h3 id="bag-title">Sacola e pedidos</h3>
 
-    <div class="scroll">
-      <div class="top-row">
-        <div class="greet">
-          <h2>Oi, Maria 👋</h2>
-          <div class="loc">📍 Copacabana, RJ ▾</div>
-        </div>
-        <div class="bell">🔔<span class="dot"></span></div>
-      </div>
-
-      <div class="search">🔍 <input placeholder="Buscar alimentos, fornecedores…"></div>
-
-      <div class="cats">
-        <div class="cat"><div class="circ" style="background:#FFE7DE">🍎</div><span>Frutas</span></div>
-        <div class="cat"><div class="circ" style="background:#F1EAFC">🥖</div><span>Padaria</span></div>
-        <div class="cat"><div class="circ" style="background:#E7F2FF">🧀</div><span>Laticínios</span></div>
-        <div class="cat"><div class="circ" style="background:#E9F9EF">🛒</div><span>Mercado</span></div>
-        <div class="cat"><div class="circ" style="background:#FFF3D6">🎁</div><span>Doações</span></div>
-        <div class="cat"><div class="circ" style="background:#FFE3E1">⏰</div><span>Urgentes</span></div>
-      </div>
-
-      <div class="promo">
-        <div class="eyebrow">Resgate hoje</div>
-        <h3>Até 70% off em alimentos perto de vencer</h3>
-        <a href="#">Ver ofertas →</a>
-      </div>
-
-      <div class="sec-head"><h3>Vencendo hoje ⏰</h3><span class="see">Ver tudo</span></div>
-      <div class="urgent-row">
-        <div class="ucard">
-          <div class="img"><span class="badge">8h</span>🍅</div>
-          <div class="body"><div class="name">Caixa de tomates</div><div class="price">R$ 18,00</div></div>
-        </div>
-        <div class="ucard">
-          <div class="img"><span class="badge">12h</span>🧀</div>
-          <div class="body"><div class="name">Queijos artesanais</div><div class="price">R$ 14,00</div></div>
-        </div>
-        <div class="ucard">
-          <div class="img"><span class="badge">6h</span>🥛</div>
-          <div class="body"><div class="name">Iogurtes naturais</div><div class="price">R$ 9,90</div></div>
-        </div>
-      </div>
-
-      <div class="sec-head"><h3>Perto de você</h3><span class="see">Ver tudo</span></div>
-      <div class="list">
-        <div class="lcard">
-          <div class="thumb">🥬</div>
-          <div class="info">
-            <div class="name">Folhas verdes sortidas</div>
-            <div class="supplier">Hortifruti Boa Vista · 1,2 km</div>
-            <div class="tags"><span class="tag venda">Venda</span></div>
-          </div>
-          <div class="right"><div class="price">R$ 22,00</div><div class="heart">🤍</div></div>
-        </div>
-        <div class="lcard">
-          <div class="thumb">🍞</div>
-          <div class="info">
-            <div class="name">Pães artesanais (20un)</div>
-            <div class="supplier">Padaria Trigo Dourado · 2,8 km</div>
-            <div class="tags"><span class="tag doacao">Doação</span></div>
-          </div>
-          <div class="right"><div class="price">Grátis</div><div class="heart">🤍</div></div>
-        </div>
-        <div class="lcard">
-          <div class="thumb">🍎</div>
-          <div class="info">
-            <div class="name">Maçãs fuji (5kg)</div>
-            <div class="supplier">Sítio Bom Fruto · 6,3 km</div>
-            <div class="tags"><span class="tag doacao">Doação</span></div>
-          </div>
-          <div class="right"><div class="price">Grátis</div><div class="heart">🤍</div></div>
-        </div>
-      </div>
+    <div class="bag-tabs">
+      <button class="bag-tab active" id="tab-sacola" type="button">🛍️ Sacola</button>
+      <button class="bag-tab" id="tab-pedidos" type="button">📦 Meus pedidos</button>
     </div>
 
-    <div class="cart-bar">
-      <div class="txt">3 itens<b>R$ 42,90</b></div>
-      <button>Ver sacola →</button>
+    <!-- SACOLA -->
+    <div id="panel-sacola">
+      <div id="bag-empty-state" class="bag-empty" style="display:none;">
+        <div class="em">🛍️</div>
+        <div><b>Sua sacola está vazia</b></div>
+        <div style="font-size:12.5px;margin-top:4px;">Adicione itens para continuar</div>
+      </div>
+
+      <div class="bag-items" id="bag-items-list"></div>
+
+      <div class="bag-summary" id="bag-summary">
+        <div class="row"><span>Subtotal</span><span id="bag-subtotal">R$ 0,00</span></div>
+        <div class="row"><span>Taxa de serviço</span><span id="bag-fee">R$ 0,00</span></div>
+        <div class="row total"><span>Total</span><span class="val" id="bag-total">R$ 0,00</span></div>
+      </div>
+
+      <button class="bag-checkout" id="bag-checkout">Finalizar pedido</button>
     </div>
 
-    <div class="bottom-nav">
-      <div class="nav-item active">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg>
-        <span>Início</span>
+    <!-- PEDIDOS -->
+    <div id="panel-pedidos" style="display:none;">
+      <div class="ord-card">
+        <div class="head"><span class="id">Pedido #1042</span><span class="ord-status andamento">Em preparo</span></div>
+        <div class="items">2x Iogurtes naturais · 1x Queijos artesanais</div>
+        <div class="foot"><span>Hortifruti Boa Vista</span><span>R$ 32,90</span></div>
       </div>
-      <div class="nav-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
-        <span>Buscar</span>
+      <div class="ord-card">
+        <div class="head"><span class="id">Pedido #1039</span><span class="ord-status pronto">Pronto p/ retirada</span></div>
+        <div class="items">1x Caixa de tomates (12kg)</div>
+        <div class="foot"><span>Hortifruti Boa Vista</span><span>R$ 18,00</span></div>
       </div>
-      <div class="nav-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8h12l-1 12H7L6 8z"/><path d="M9 8V6a3 3 0 016 0v2"/></svg>
-        <span>Pedidos</span>
-      </div>
-      <div class="nav-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="12" rx="2"/><path d="M3 8l9-5 9 5"/></svg>
-        <span>Doações</span>
-      </div>
-      <div class="nav-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-5 6-6 8-6s6.5 1 8 6"/></svg>
-        <span>Perfil</span>
+      <div class="ord-card">
+        <div class="head"><span class="id">Pedido #1021</span><span class="ord-status concluido">Concluído</span></div>
+        <div class="items">1x Pães artesanais (20un) · Doação</div>
+        <div class="foot"><span>Padaria Trigo Dourado</span><span>Grátis</span></div>
       </div>
     </div>
   </div>
 </div>
+
+<div class="cart-bar" id="cart-bar">
+  <div class="txt" id="cart-bar-txt">0 itens<b>R$ 0,00</b></div>
+  <button type="button" id="cart-bar-btn">Ver sacola →</button>
+</div>
+
+<nav class="bottom-nav">
+  <button class="nav-item active">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg>
+    <span>Início</span>
+  </button>
+  <button class="nav-item">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+    <span>Buscar</span>
+  </button>
+  <button class="nav-item" data-opens-bag="pedidos">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8h12l-1 12H7L6 8z"/><path d="M9 8V6a3 3 0 016 0v2"/></svg>
+    <span>Pedidos</span>
+  </button>
+  <button class="nav-item">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="12" rx="2"/><path d="M3 8l9-5 9 5"/></svg>
+    <span>Doações</span>
+  </button>
+  <button class="nav-item">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-5 6-6 8-6s6.5 1 8 6"/></svg>
+    <span>Perfil</span>
+  </button>
+</nav>
+
 
 
 
