@@ -31,6 +31,7 @@
     cliente: document.getElementById("view-cliente"),
     fornecedor: document.getElementById("view-fornecedor"),
     admin: document.getElementById("view-admin")
+    // cadastro: document.getElementById("view-cadastro")
   };
 
   var navButtons = document.querySelectorAll("#ps-nav button");
@@ -52,6 +53,7 @@
     });
 
     closePicker();
+    closeCadastro();
   }
 
   // clique direto nos botões da barra superior
@@ -87,6 +89,30 @@
     });
   });
 
+  // -------------------- modal "Criar conta" (tela de cadastro) --------------------
+  // Aberto pelo botão "Criar conta" da landing. Mostra o formulário de
+  // cadastro (pages/Cadastro/cadastro.html) dentro de um iframe. Quando o
+  // cadastro é concluído com sucesso, cadastro.html avisa este shell via
+  // postMessage({ psNav: "cliente" }) e caímos direto no fluxo normal de
+  // navegação (showView), que já fecha este modal.
+
+  var cadastroOverlay = document.getElementById("ps-cadastro-overlay");
+
+  function openCadastro() {
+    cadastroOverlay.classList.add("on");
+  }
+
+  function closeCadastro() {
+    cadastroOverlay.classList.remove("on");
+  }
+
+  document.getElementById("ps-cadastro-close").addEventListener("click", closeCadastro);
+
+  // fecha o modal ao clicar fora da caixa de diálogo
+  cadastroOverlay.addEventListener("click", function (evento) {
+    if (evento.target === cadastroOverlay) closeCadastro();
+  });
+
   // -------------------- ponte de mensagens (postMessage) --------------------
   // Cada página embutida (landing, cliente, fornecedor, admin) roda
   // isolada em seu iframe e não tem acesso direto a este script.
@@ -100,6 +126,8 @@
 
     if (dados.psNav === "picker") {
       openPicker();
+    } else if (dados.psNav === "cadastro") {
+      openCadastro();
     } else {
       showView(dados.psNav);
     }

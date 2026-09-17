@@ -44,7 +44,7 @@
     <iframe src="pages/landing/landing.html" title="Prato Salvo — Início"></iframe>
   </div>
   <div class="ps-view" id="view-cliente">
-    <iframe src="pages/cliente/cliente.html" title="Prato Salvo — App do Cliente"></iframe>
+    <iframe src="pages/cliente/2-app-cliente.html" title="Prato Salvo — App do Cliente"></iframe>
   </div>
   <div class="ps-view" id="view-fornecedor">
     <iframe src="pages/fornecedor/fornecedor.html" title="Prato Salvo — Portal do Fornecedor"></iframe>
@@ -59,10 +59,17 @@
   <div id="ps-picker">
     <h3>Entrar no Prato Salvo</h3>
     <p>Escolha como você quer continuar:</p>
-    <div class="opt" data-view="cliente"><span class="ic">🧺</span> Sou cliente — quero encontrar comida</div>
-    <div class="opt" data-view="fornecedor"><span class="ic">🏬</span> Sou fornecedor — quero anunciar alimentos</div>
-    <div class="opt" data-view="admin"><span class="ic">🛠️</span> Sou da equipe — painel administrativo</div>
-    <button id="ps-picker-close">Cancelar</button>
+  <div class="opt" data-view="fornecedor"><span class="ic">🏬</span> Sou fornecedor — quero anunciar alimentos</div>
+  <div class="opt" data-view="admin"><span class="ic">🛠️</span> Sou da equipe — painel administrativo</div>
+  <button id="ps-picker-close">Cancelar</button>
+  </div>
+</div>
+
+<!-- Modal exibido ao clicar em "Criar conta" na landing: tela de cadastro -->
+<div id="ps-cadastro-overlay">
+  <div id="ps-cadastro-box">
+    <button id="ps-cadastro-close" aria-label="Fechar">✕</button>
+    <iframe src="pages/Cadastro/cadastro.html" title="Prato Salvo — Criar conta"></iframe>
   </div>
 </div>
 

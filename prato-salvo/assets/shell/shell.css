@@ -197,6 +197,63 @@ body {
   cursor: pointer;
 }
 
+/* -------------------- modal "Criar conta" (tela de cadastro) -------------------- */
+
+#ps-cadastro-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(20, 52, 42, .55);
+  backdrop-filter: blur(2px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 20px;
+}
+
+#ps-cadastro-overlay.on {
+  display: flex;
+}
+
+#ps-cadastro-box {
+  position: relative;
+  background: #fff;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 960px;
+  height: 90vh;
+  max-height: 720px;
+  box-shadow: 0 30px 70px rgba(0, 0, 0, .35);
+  overflow: hidden;
+}
+
+#ps-cadastro-box iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+#ps-cadastro-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 1;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(20, 52, 42, .85);
+  color: #EAF0E7;
+  font-size: 14px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+#ps-cadastro-close:hover {
+  background: #14342A;
+}
+
 /* -------------------- responsivo -------------------- */
 
 @media (max-width: 640px) {

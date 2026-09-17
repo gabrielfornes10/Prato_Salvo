@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Criar conta · Viveiro</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;1,400&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink: #1F2A28;
+    --ink-soft: #3A4A47;
+    --paper: #FBF9F4;
+    --sage: #3E5C4F;
+    --sage-dark: #2A4038;
+    --gold: #C7963E;
+    --line: #E2DED3;
+    --error: #A8402F;
+  }
+
+  *{ box-sizing: border-box; }
+
+  html, body{
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+  }
+
+  body{
+    font-family: 'Work Sans', sans-serif;
+    color: var(--ink);
+    background: var(--paper);
+  }
+
+  .screen{
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1.15fr;
+  }
+
+  /* ---------- Painel de marca ---------- */
+  .brand{
+    background: var(--ink);
+    color: var(--paper);
+    padding: 56px 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .brand::before{
+    content: "";
+    position: absolute;
+    right: -120px;
+    bottom: -140px;
+    width: 380px;
+    height: 380px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, var(--sage) 0%, transparent 70%);
+    opacity: 0.55;
+  }
+
+  .brand::after{
+    content: "";
+    position: absolute;
+    left: -90px;
+    top: -100px;
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 60% 40%, var(--gold) 0%, transparent 72%);
+    opacity: 0.28;
+  }
+
+  .brand-mark{
+    font-family: 'Newsreader', serif;
+    font-size: 1.5rem;
+    letter-spacing: 0.01em;
+    position: relative;
+    z-index: 1;
+  }
+
+  .brand-copy{
+    position: relative;
+    z-index: 1;
+    max-width: 26ch;
+  }
+
+  .brand-copy h1{
+    font-family: 'Newsreader', serif;
+    font-weight: 500;
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    line-height: 1.2;
+    margin: 0 0 16px;
+  }
+
+  .brand-copy p{
+    font-size: 0.98rem;
+    line-height: 1.6;
+    color: #D9DED9;
+    margin: 0;
+  }
+
+  .brand-foot{
+    position: relative;
+    z-index: 1;
+    font-size: 0.82rem;
+    color: #9FB0AA;
+  }
+
+  /* ---------- Painel de formulário ---------- */
+  .panel{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 48px 24px;
+  }
+
+  .form-card{
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .form-card h2{
+    font-family: 'Newsreader', serif;
+    font-weight: 500;
+    font-style: italic;
+    font-size: 1.9rem;
+    margin: 0 0 6px;
+  }
+
+  .form-card .sub{
+    margin: 0 0 32px;
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+  }
+
+  .form-card .sub a{
+    color: var(--sage-dark);
+    font-weight: 500;
+    text-decoration: none;
+    border-bottom: 1px solid var(--sage-dark);
+  }
+
+  form{
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .row{
+    display: flex;
+    gap: 14px;
+  }
+
+  .field{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1;
+  }
+
+  .field label{
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+  }
+
+  .field input{
+    font-family: inherit;
+    font-size: 0.98rem;
+    padding: 12px 14px;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fff;
+    color: var(--ink);
+    outline: none;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  }
+
+  .field input::placeholder{
+    color: #A9A79B;
+  }
+
+  .field input:focus{
+    border-color: var(--sage);
+    box-shadow: 0 0 0 3px rgba(62, 92, 79, 0.15);
+  }
+
+  .field .hint{
+    font-size: 0.78rem;
+    color: #8C8A7E;
+  }
+
+  .field.has-error input{
+    border-color: var(--error);
+  }
+
+  .field.has-error .hint{
+    color: var(--error);
+  }
+
+  .password-wrap{
+    position: relative;
+  }
+
+  .password-wrap input{
+    width: 100%;
+    padding-right: 46px;
+  }
+
+  .toggle-visibility{
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background: none;
+    font-size: 0.78rem;
+    color: var(--sage-dark);
+    cursor: pointer;
+    padding: 4px 6px;
+  }
+
+  .terms{
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    line-height: 1.5;
+    margin-top: 4px;
+  }
+
+  .terms input{
+    margin-top: 3px;
+    accent-color: var(--sage);
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+  }
+
+  .terms a{
+    color: var(--sage-dark);
+    font-weight: 500;
+  }
+
+  .submit{
+    margin-top: 6px;
+    padding: 13px 20px;
+    border: none;
+    border-radius: 4px;
+    background: var(--sage-dark);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.15s ease, transform 0.05s ease;
+  }
+
+  .submit:hover{
+    background: var(--sage);
+  }
+
+  .submit:active{
+    transform: translateY(1px);
+  }
+
+  .divider{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #B2AF9F;
+    font-size: 0.8rem;
+    margin: 4px 0;
+  }
+
+  .divider::before,
+  .divider::after{
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--line);
+  }
+
+  .social{
+    display: flex;
+    gap: 12px;
+  }
+
+  .social button{
+    flex: 1;
+    padding: 11px;
+    border-radius: 4px;
+    border: 1px solid var(--line);
+    background: #fff;
+    font-family: inherit;
+    font-size: 0.9rem;
+    color: var(--ink-soft);
+    cursor: pointer;
+    transition: border-color 0.15s ease, background 0.15s ease;
+  }
+
+  .social button:hover{
+    border-color: var(--sage);
+    background: #F4F6F3;
+  }
+
+  /* ---------- Responsivo ---------- */
+  @media (max-width: 860px){
+    .screen{
+      grid-template-columns: 1fr;
+    }
+
+    .brand{
+      padding: 40px 28px;
+      min-height: 220px;
+    }
+
+    .brand-foot{
+      display: none;
+    }
+
+    .brand-copy p{
+      display: none;
+    }
+
+    .brand-copy h1{
+      font-size: 1.6rem;
+    }
+  }
+
+  @media (max-width: 480px){
+    .panel{
+      padding: 32px 20px 48px;
+    }
+
+    .row{
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .social{
+      flex-direction: column;
+    }
+
+    .brand{
+      padding: 32px 22px;
+      min-height: 170px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="screen">
+
+  <aside class="brand">
+    <div class="brand-mark">Prato Salvo</div>
+    <div class="brand-copy">
+      <h1>Antes de virar lixo, vira refeição.</h1>
+      <p>Da prateleira à mesa, antes do relógio zerar.</p>
+    </div>
+    <div class="brand-foot">© 2026 Prato Salvo</div>
+  </aside>
+
+  <main class="panel">
+    <div class="form-card">
+      <h2>Crie sua conta</h2>
+      <p class="sub">Já tem cadastro? <a href="#">Entrar</a></p>
+
+      <form novalidate>
+        <div class="field">
+          <label for="nome">Nome completo</label>
+          <input type="text" id="nome" name="nome" placeholder="Como podemos te chamar" required>
+        </div>
+
+        <div class="field">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" name="email" placeholder="voce@email.com" required>
+        </div>
+
+        <div class="row">
+          <div class="field">
+            <label for="senha">Senha</label>
+            <div class="password-wrap">
+              <input type="password" id="senha" name="senha" placeholder="Mínimo 8 caracteres" required minlength="8">
+              <button type="button" class="toggle-visibility" data-target="senha">mostrar</button>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="confirmar">Confirmar senha</label>
+            <div class="password-wrap">
+              <input type="password" id="confirmar" name="confirmar" placeholder="Repita a senha" required minlength="8">
+              <button type="button" class="toggle-visibility" data-target="confirmar">mostrar</button>
+            </div>
+          </div>
+        </div>
+
+        <label class="terms">
+          <input type="checkbox" name="termos" required>
+          <span>Concordo com os <a href="#">Termos de uso</a> e a <a href="#">Política de privacidade</a>.</span>
+        </label>
+
+        <button type="submit" class="submit">Criar conta</button>
+
+        <div class="divider">ou continue com</div>
+
+        <div class="social">
+          <button type="button">Google</button>
+          <button type="button">Apple</button>
+        </div>
+      </form>
+    </div>
+  </main>
+
+</div>
+
+<script>
+  document.querySelectorAll('.toggle-visibility').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var input = document.getElementById(btn.dataset.target);
+      var isHidden = input.type === 'password';
+      input.type = isHidden ? 'text' : 'password';
+      btn.textContent = isHidden ? 'ocultar' : 'mostrar';
+    });
+  });
+
+  var form = document.querySelector('form');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var senha = document.getElementById('senha');
+    var confirmar = document.getElementById('confirmar');
+    var campoConfirmar = confirmar.closest('.field');
+
+    if (senha.value !== confirmar.value){
+      campoConfirmar.classList.add('has-error');
+      if (!campoConfirmar.querySelector('.hint')){
+        var hint = document.createElement('span');
+        hint.className = 'hint';
+        hint.textContent = 'As senhas não coincidem';
+        campoConfirmar.appendChild(hint);
+      }
+      return;
+    }
+
+    campoConfirmar.classList.remove('has-error');
+    var hint = campoConfirmar.querySelector('.hint');
+    if (hint) hint.remove();
+
+    // Conta criada com sucesso: avisa o shell (index.html) para fechar
+    // este modal e levar o usuário direto para o App Cliente.
+    var botao = form.querySelector('.submit');
+    botao.disabled = true;
+    botao.textContent = 'Conta criada! Entrando...';
+
+    setTimeout(function () {
+      parent.postMessage({ psNav: 'cliente' }, '*');
+    }, 700);
+  });
+</script>
+
+</body>
+</html>

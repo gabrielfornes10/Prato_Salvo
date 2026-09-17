@@ -26,7 +26,7 @@
   var mapaDeNavegacao = {
     "ps-brand": "landing",
     "ps-entrar": "picker",              // abre o seletor de perfil (modal)
-    "ps-criar-conta": "picker",         // idem, para cadastro
+    "ps-criar-conta": "cadastro",       // abre direto a tela de cadastro
     "ps-card-fornecedor": "fornecedor", // card "Tenho alimentos a oferecer"
     "ps-card-cliente": "cliente",       // card "Quero encontrar comida perto"
     "ps-cta-fornecedor": "fornecedor",  // CTA final "Sou fornecedor"
