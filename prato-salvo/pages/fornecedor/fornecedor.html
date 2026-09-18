@@ -22,84 +22,146 @@
 <header>
   <div class="brand" id="ps-brand">Prato Salvo</div>
   <nav class="top-nav">
-    <a class="active">Painel</a><a>Produtos</a><a>Pedidos</a><a>Financeiro</a><a>Relatórios</a>
+    <a class="active" data-section="painel">Painel</a>
+    <a data-section="produtos">Produtos</a>
+    <a data-section="pedidos">Pedidos</a>
+    <a data-section="financeiro">Financeiro</a>
+    <a data-section="relatorios">Relatórios</a>
   </nav>
   <div class="top-actions">
     <div class="icon-btn">🔔<span class="dot"></span></div>
-    <div class="avatar">HB</div>
+    <div class="avatar">ADM</div>
   </div>
 </header>
 
 <main>
-  <div class="hero">
-    <div class="hero-top">
-      <div>
-        <div class="eyebrow">Saldo disponível</div>
-        <div class="balance">R$ 1.480,00</div>
-        <div class="sub">Próximo repasse em 3 dias · Hortifruti Boa Vista</div>
+  <section class="view" id="view-painel">
+    <div class="hero">
+      <div class="hero-top">
+        <div>
+          <div class="eyebrow">Saldo disponível</div>
+          <div class="balance">R$ 1.480,00</div>
+          <div class="sub">Próximo repasse em 3 dias · Hortifruti Boa Vista</div>
+        </div>
+        <button>Sacar agora</button>
       </div>
-      <button>Sacar agora</button>
     </div>
-  </div>
 
-  <div class="stats">
-    <div class="stat"><div class="chip" style="background:var(--coral-light)">🍞</div><div class="num">18</div><div class="lbl">Produtos ativos</div><span class="delta">↑ 4 esta semana</span></div>
-    <div class="stat"><div class="chip" style="background:var(--purple-light)">⚖️</div><div class="num">340 kg</div><div class="lbl">Redistribuídos no mês</div><span class="delta">↑ 12%</span></div>
-    <div class="stat"><div class="chip" style="background:#FFF3D6">🍽️</div><div class="num">612</div><div class="lbl">Refeições impactadas</div><span class="delta">↑ 9%</span></div>
-    <div class="stat"><div class="chip" style="background:#E9F9EF">💳</div><div class="num">R$ 1.480</div><div class="lbl">Receita este mês</div><span class="delta">↑ 15%</span></div>
-  </div>
+    <div class="stats">
+      <div class="stat"><div class="chip" style="background:var(--coral-light)">🍞</div><div class="num">18</div><div class="lbl">Produtos ativos</div><span class="delta">↑ 4 esta semana</span></div>
+      <div class="stat"><div class="chip" style="background:var(--purple-light)">⚖️</div><div class="num">340 kg</div><div class="lbl">Redistribuídos no mês</div><span class="delta">↑ 12%</span></div>
+      <div class="stat"><div class="chip" style="background:#FFF3D6">🍽️</div><div class="num">612</div><div class="lbl">Refeições impactadas</div><span class="delta">↑ 9%</span></div>
+      <div class="stat"><div class="chip" style="background:#E9F9EF">💳</div><div class="num">R$ 1.480</div><div class="lbl">Receita este mês</div><span class="delta">↑ 15%</span></div>
+    </div>
 
-  <div class="sec-head">
-    <h2>Produtos vencendo</h2>
-    <button class="fab">＋ Novo produto</button>
-  </div>
-  <div class="grid">
-    <div class="card">
-      <div class="img"><span class="badge" style="background:var(--red)">Vence em 8h</span>🍅</div>
-      <div class="body">
-        <h3>Caixa de tomates (12kg)</h3>
-        <div class="meta">Lote #A102 · Venda</div>
-        <div class="foot"><span class="price">R$ 18,00</span><div class="acts"><span class="icb">✏️</span><span class="icb">⏸</span></div></div>
+    <div class="sec-head">
+      <h2>Produtos vencendo</h2>
+      <button class="fab">＋ Novo produto</button>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <div class="img"><span class="badge" style="background:var(--red)">Vence em 8d</span>🍅</div>
+        <div class="body">
+          <h3>Caixa de tomates (12kg)</h3>
+          <div class="meta">Lote #A102 · Venda</div>
+          <div class="foot"><span class="price">R$ 18,00</span><div class="acts"><span class="icb">✏️</span><span class="icb">⏸</span></div></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="img p"><span class="badge" style="background:var(--amber)">Vence em 3d</span>🍞</div>
+        <div class="body">
+          <h3>Pães artesanais (20un)</h3>
+          <div class="meta">Lote #B045 · Doação</div>
+          <div class="foot"><span class="price">Doação</span><div class="acts"><span class="icb">✏️</span><span class="icb">⏸</span></div></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="img"><span class="badge" style="background:var(--green)">Vence em 7d</span>🥬</div>
+        <div class="body">
+          <h3>Folhas verdes sortidas (8kg)</h3>
+          <div class="meta">Lote #C220 · Venda</div>
+          <div class="foot"><span class="price">R$ 22,00</span><div class="acts"><span class="icb">✏️</span><span class="icb">⏸</span></div></div>
+        </div>
       </div>
     </div>
-    <div class="card">
-      <div class="img p"><span class="badge" style="background:var(--amber)">Vence em 3d</span>🍞</div>
-      <div class="body">
-        <h3>Pães artesanais (20un)</h3>
-        <div class="meta">Lote #B045 · Doação</div>
-        <div class="foot"><span class="price">Doação</span><div class="acts"><span class="icb">✏️</span><span class="icb">⏸</span></div></div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="img"><span class="badge" style="background:var(--green)">Vence em 7d</span>🥬</div>
-      <div class="body">
-        <h3>Folhas verdes sortidas (8kg)</h3>
-        <div class="meta">Lote #C220 · Venda</div>
-        <div class="foot"><span class="price">R$ 22,00</span><div class="acts"><span class="icb">✏️</span><span class="icb">⏸</span></div></div>
-      </div>
-    </div>
-  </div>
 
-  <div class="sec-head"><h2>Atividade recente</h2></div>
-  <div class="feed">
-    <div class="frow">
-      <div class="ficon" style="background:var(--coral-light)">🛒</div>
-      <div class="ftxt"><div class="t1">Venda · Caixa de tomates (12kg)</div><div class="t2">Restaurante Sabor Caseiro</div></div>
-      <div><div class="famt">+R$ 18,00</div><div class="ftime">há 12 min</div></div>
+    <div class="sec-head"><h2>Atividade recente</h2></div>
+    <div class="feed">
+      <div class="frow">
+        <div class="ficon" style="background:var(--coral-light)">🛒</div>
+        <div class="ftxt"><div class="t1">Venda · Caixa de tomates (12kg)</div><div class="t2">Restaurante Sabor Caseiro</div></div>
+        <div><div class="famt">+R$ 18,00</div><div class="ftime">há 12 min</div></div>
+      </div>
+      <div class="frow">
+        <div class="ficon" style="background:var(--purple-light)">🎁</div>
+        <div class="ftxt"><div class="t1">Doação reservada · Pães artesanais</div><div class="t2">ONG Mesa Solidária</div></div>
+        <div><div class="famt">—</div><div class="ftime">há 2h</div></div>
+      </div>
+      <div class="frow">
+        <div class="ficon" style="background:var(--coral-light)">🛒</div>
+        <div class="ftxt"><div class="t1">Venda · Folhas verdes sortidas</div><div class="t2">Maria F.</div></div>
+        <div><div class="famt">+R$ 22,00</div><div class="ftime">há 5h</div></div>
+      </div>
     </div>
-    <div class="frow">
-      <div class="ficon" style="background:var(--purple-light)">🎁</div>
-      <div class="ftxt"><div class="t1">Doação reservada · Pães artesanais</div><div class="t2">ONG Mesa Solidária</div></div>
-      <div><div class="famt">—</div><div class="ftime">há 2h</div></div>
-    </div>
-    <div class="frow">
-      <div class="ficon" style="background:var(--coral-light)">🛒</div>
-      <div class="ftxt"><div class="t1">Venda · Folhas verdes sortidas</div><div class="t2">Maria F.</div></div>
-      <div><div class="famt">+R$ 22,00</div><div class="ftime">há 5h</div></div>
-    </div>
-  </div>
+  </section>
+
+  <section class="view" id="view-produtos" hidden>
+    <div class="placeholder-panel">Gestão completa de produtos em construção.</div>
+  </section>
+
+  <section class="view" id="view-pedidos" hidden>
+    <div class="placeholder-panel">Histórico de pedidos em construção.</div>
+  </section>
+
+  <section class="view" id="view-financeiro" hidden>
+    <div class="placeholder-panel">Extrato financeiro em construção.</div>
+  </section>
+
+  <section class="view" id="view-relatorios" hidden>
+    <div class="placeholder-panel">Relatórios em construção.</div>
+  </section>
 </main>
+<div class="pm-overlay" id="pm-overlay">
+  <div class="pm-modal" role="dialog" aria-modal="true" aria-labelledby="pm-title">
+    <button class="pm-close" id="pm-close" aria-label="Fechar">✕</button>
+    <h3 id="pm-title">Novo produto</h3>
 
+    <form id="pm-form">
+      <label class="pm-field">
+        <span>Nome do produto</span>
+        <input type="text" id="pm-nome" required placeholder="Ex: Caixa de tomates (12kg)">
+      </label>
+
+      <label class="pm-field">
+        <span>Lote (opcional)</span>
+        <input type="text" id="pm-lote" placeholder="Ex: A103">
+      </label>
+
+      <div class="pm-field">
+        <span>Tipo</span>
+        <div class="pm-radio-row">
+          <label><input type="radio" name="pm-tipo" value="Venda" checked> Venda</label>
+          <label><input type="radio" name="pm-tipo" value="Doação"> Doação</label>
+        </div>
+      </div>
+
+      <label class="pm-field" id="pm-preco-field">
+        <span>Preço (R$)</span>
+        <input type="number" id="pm-preco" min="0" step="0.01" placeholder="0,00">
+      </label>
+
+      <label class="pm-field">
+        <span>Vencimento</span>
+        <input type="date" id="pm-validade" required>
+      </label>
+
+      <button type="submit" class="pm-submit">Cadastrar produto</button>
+    </form>
+  </div>
+</div>
+
+<!-- Comportamento próprio da página: abas do menu + modal de novo produto -->
+<script src="fornecedor.js"></script>
 <!-- Ponte de navegação: leva de volta à Landing Page via shell/router -->
 <script src="fornecedor-bridge.js"></script>
 </body>

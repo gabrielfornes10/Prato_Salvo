@@ -74,3 +74,32 @@
   .famt{font-weight:800;font-size:14px;text-align:right;}
   .ftime{font-size:11px;color:var(--ink-soft);text-align:right;margin-top:2px;}
 
+  .placeholder-panel{
+  background:var(--white);border-radius:var(--r-lg);padding:48px 24px;
+  box-shadow:var(--shadow);color:var(--ink-soft);text-align:center;font-size:14px;
+}
+
+.pm-overlay{
+  display:none;position:fixed;inset:0;background:rgba(24,21,33,.5);
+  align-items:center;justify-content:center;z-index:100;padding:20px;
+}
+.pm-overlay.open{display:flex;}
+.pm-modal{
+  background:var(--white);border-radius:var(--r-lg);padding:28px 26px;
+  width:100%;max-width:420px;box-shadow:0 30px 70px rgba(0,0,0,.3);
+  position:relative;max-height:90vh;overflow-y:auto;
+}
+.pm-close{position:absolute;top:16px;right:16px;background:#F5F2FB;border:none;width:32px;height:32px;border-radius:50%;cursor:pointer;font-size:14px;}
+.pm-modal h3{margin:0 0 18px;font-size:18px;}
+.pm-field{display:block;margin-bottom:14px;font-size:12.5px;font-weight:600;color:var(--ink-soft);}
+.pm-field input{
+  display:block;width:100%;margin-top:6px;padding:10px 12px;
+  border:1px solid #EAE7F0;border-radius:10px;font-family:inherit;font-size:13.5px;color:var(--ink);
+}
+.pm-radio-row{display:flex;gap:16px;margin-top:6px;font-weight:500;}
+.pm-radio-row label{display:flex;align-items:center;gap:6px;}
+.pm-submit{
+  width:100%;background:var(--purple);color:#fff;border:none;font-weight:700;
+  font-size:13.5px;padding:13px;border-radius:var(--r-full);cursor:pointer;margin-top:6px;
+}
+
