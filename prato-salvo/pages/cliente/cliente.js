@@ -18,16 +18,27 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   const input = document.getElementById('search-input');
-  const cards = [...document.querySelectorAll('.lcard')];
-  const navItems = [...document.querySelectorAll('.nav-item')];
-  const hnavLinks = [...document.querySelectorAll('.hnav a')];
+const cards = [...document.querySelectorAll('.lcard')];
+const navItems = [...document.querySelectorAll('.nav-item')];
+const hnavLinks = [...document.querySelectorAll('.hnav a')];
 
-  input?.addEventListener('input', () => {
-    const term = input.value.trim().toLowerCase();
-    cards.forEach(card => {
-      card.style.display = card.innerText.toLowerCase().includes(term) ? 'flex' : 'none';
-    });
+let filtroAtivo = 'todos'; // guarda qual filtro de categoria está selecionado
+
+// função única que decide, pra cada card, se ele deve aparecer —
+// levando em conta o texto buscado E o filtro de categoria ao mesmo tempo
+function aplicarFiltros() {
+  const termo = (input?.value || '').trim().toLowerCase();
+
+  cards.forEach(card => {
+    const bateComBusca = card.innerText.toLowerCase().includes(termo);
+    const ehDoacao = card.querySelector('.tag.doacao') !== null;
+    const bateComFiltro = filtroAtivo === 'todos' || (filtroAtivo === 'doacao' && ehDoacao);
+
+    card.style.display = (bateComBusca && bateComFiltro) ? 'flex' : 'none';
   });
+}
+
+input?.addEventListener('input', aplicarFiltros);
 
   document.querySelectorAll('.heart').forEach(btn => {
     btn.setAttribute('aria-label','Favoritar');
@@ -43,6 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
     item.addEventListener('click', () => {
       navItems.forEach(n => n.classList.remove('active'));
       item.classList.add('active');
+      
     });
   });
 
@@ -50,6 +62,11 @@ document.addEventListener('DOMContentLoaded', () => {
     link.addEventListener('click', () => {
       hnavLinks.forEach(l => l.classList.remove('active'));
       link.classList.add('active');
+
+       if (link.dataset.filter) {      // ⚠️ "link" não existe aqui dentro!
+    filtroAtivo = link.dataset.filter;
+    aplicarFiltros();
+      }
     });
   });
 

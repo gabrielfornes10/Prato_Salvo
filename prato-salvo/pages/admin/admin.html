@@ -92,31 +92,27 @@
     </div>
     <div class="table-wrap">
       <table>
-        <thead><tr><th>Nome</th><th>Tipo</th><th>Cidade</th><th>Cadastro</th><th>Status</th><th>Ações</th></tr></thead>
+        <thead><tr><th>Nome</th><th>Tipo</th><th>Cidade</th><th>Cadastro</th><th>Status</th></tr></thead>
         <tbody>
           <tr>
             <td><div class="who"><div class="ini" style="background:var(--purple)">PT</div>Padaria Trigo Dourado</div></td>
             <td>Padaria</td><td>Rio de Janeiro, RJ</td><td>18/08/2026</td>
             <td><span class="status pend">Pendente</span></td>
-            <td class="actions"><button class="approve">Aprovar</button><button class="reject">Recusar</button></td>
           </tr>
           <tr>
             <td><div class="who"><div class="ini" style="background:var(--green)">SB</div>Sítio Bom Fruto</div></td>
             <td>Produtor rural</td><td>Nova Iguaçu, RJ</td><td>17/08/2026</td>
             <td><span class="status pend">Pendente</span></td>
-            <td class="actions"><button class="approve">Aprovar</button><button class="reject">Recusar</button></td>
           </tr>
           <tr>
             <td><div class="who"><div class="ini" style="background:var(--coral)">MC</div>Mercado Central Ltda.</div></td>
             <td>Mercado</td><td>Duque de Caxias, RJ</td><td>15/08/2026</td>
             <td><span class="status flag">Sinalizado</span></td>
-            <td class="actions"><button class="approve">Revisar</button><button class="reject">Suspender</button></td>
           </tr>
           <tr>
             <td><div class="who"><div class="ini" style="background:var(--amber)">LS</div>Laticínios Serra Verde</div></td>
             <td>Laticínios</td><td>Petrópolis, RJ</td><td>12/08/2026</td>
             <td><span class="status ok">Verificado</span></td>
-            <td class="actions">—</td>
           </tr>
         </tbody>
       </table>
@@ -125,12 +121,96 @@
     </section>
 
      <section class="view" id="view-fornecedores" data-title="Fornecedores" hidden>
-      <div class="sec-head"><h2>Fornecedores</h2></div>
-      <div class="panel"><p style="color:var(--ink-soft)">Gestão de fornecedores em construção.</p></div>
+       <div class="sec-head"><h2>Fornecedores</h2></div>
+       <div class="panel chart-panel">
+  <h3>Novos fornecedores cadastrados por mês</h3>
+  <div class="bars">
+    <div class="bar-col"><div class="bar" style="height:50%"></div><span>Mar</span></div>
+    <div class="bar-col"><div class="bar" style="height:62%"></div><span>Abr</span></div>
+    <div class="bar-col"><div class="bar" style="height:75%"></div><span>Mai</span></div>
+    <div class="bar-col"><div class="bar" style="height:62%"></div><span>Jun</span></div>
+    <div class="bar-col"><div class="bar" style="height:87%"></div><span>Jul</span></div>
+    <div class="bar-col"><div class="bar" style="height:100%"></div><span>Ago</span></div>
+  </div>
+</div>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Nome</th><th>Tipo</th><th>Cidade</th><th>Cadastro</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><div class="who"><div class="ini" style="background:var(--purple)">PT</div>Padaria Trigo Dourado</div></td>
+          <td>Padaria</td><td>Rio de Janeiro, RJ</td><td>18/08/2026</td>
+          <td><span class="status pend">Pendente</span></td>
+        </tr>
+        <tr>
+          <td><div class="who"><div class="ini" style="background:var(--green)">SB</div>Sítio Bom Fruto</div></td>
+          <td>Produtor rural</td><td>Nova Iguaçu, RJ</td><td>17/08/2026</td>
+          <td><span class="status pend">Pendente</span></td>
+        </tr>
+        <tr>
+          <td><div class="who"><div class="ini" style="background:var(--coral)">MC</div>Mercado Central Ltda.</div></td>
+          <td>Mercado</td><td>Duque de Caxias, RJ</td><td>15/08/2026</td>
+          <td><span class="status flag">Sinalizado</span></td>
+        </tr>
+        <tr>
+          <td><div class="who"><div class="ini" style="background:var(--amber)">LS</div>Laticínios Serra Verde</div></td>
+          <td>Laticínios</td><td>Petrópolis, RJ</td><td>12/08/2026</td>
+          <td><span class="status ok">Verificado</span></td>
+        </tr>
+        <tr>
+          <td><div class="who"><div class="ini" style="background:var(--green)">HB</div>Hortifruti Boa Vista</div></td>
+          <td>Hortifruti</td><td>Rio de Janeiro, RJ</td><td>03/07/2026</td>
+          <td><span class="status ok">Verificado</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
     </section>
       <section class="view" id="view-clientes" data-title="Clientes" hidden>
-      <div class="sec-head"><h2>Clientes</h2></div>
-      <div class="panel"><p style="color:var(--ink-soft)">Gestão de clientes em construção.</p></div>
+       <div class="sec-head"><h2>Clientes</h2></div>
+       <div class="panel chart-panel">
+  <h3>Novos clientes cadastrados por mês</h3>
+  <div class="bars">
+    <div class="bar-col"><div class="bar" style="height:54%"></div><span>Mar</span></div>
+    <div class="bar-col"><div class="bar" style="height:67%"></div><span>Abr</span></div>
+    <div class="bar-col"><div class="bar" style="height:62%"></div><span>Mai</span></div>
+    <div class="bar-col"><div class="bar" style="height:79%"></div><span>Jun</span></div>
+    <div class="bar-col"><div class="bar" style="height:90%"></div><span>Jul</span></div>
+    <div class="bar-col"><div class="bar" style="height:100%"></div><span>Ago</span></div>
+  </div>
+</div>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Nome</th><th>Tipo</th><th>Cidade</th><th>Cadastro</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><div class="who"><div class="ini" style="background:var(--purple)">MF</div>Maria F.</div></td>
+          <td>Pessoa física</td><td>Rio de Janeiro, RJ</td><td>14/07/2026</td>
+          <td><span class="status ok">Ativo</span></td>
+        </tr>
+        <tr>
+          <td><div class="who"><div class="ini" style="background:var(--coral)">RS</div>Restaurante Sabor Caseiro</div></td>
+          <td>Restaurante parceiro</td><td>Rio de Janeiro, RJ</td><td>02/05/2026</td>
+          <td><span class="status ok">Ativo</span></td>
+        </tr>
+        <tr>
+          <td><div class="who"><div class="ini" style="background:var(--green)">MS</div>ONG Mesa Solidária</div></td>
+          <td>ONG parceira</td><td>Rio de Janeiro, RJ</td><td>20/03/2026</td>
+          <td><span class="status ok">Verificado</span></td>
+        </tr>
+        <tr>
+          <td><div class="who"><div class="ini" style="background:var(--amber)">JP</div>João Pedro Alves</div></td>
+          <td>Pessoa física</td><td>Nova Iguaçu, RJ</td><td>15/08/2026</td>
+          <td><span class="status pend">Novo</span></td>
+        </tr>
+        <tr>
+          <td><div class="who"><div class="ini" style="background:var(--coral)">CP</div>Cantina Popular Central</td>
+          <td>Restaurante parceiro</td><td>Duque de Caxias, RJ</td><td>01/08/2026</td>
+          <td><span class="status pend">Novo</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
     
     </section>
   </main>

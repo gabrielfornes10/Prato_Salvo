@@ -25,8 +25,6 @@
     <a class="active" data-section="painel">Painel</a>
     <a data-section="produtos">Produtos</a>
     <a data-section="pedidos">Pedidos</a>
-    <a data-section="financeiro">Financeiro</a>
-    <a data-section="relatorios">Relatórios</a>
   </nav>
   <div class="top-actions">
     <div class="icon-btn">🔔<span class="dot"></span></div>
@@ -106,20 +104,77 @@
   </section>
 
   <section class="view" id="view-produtos" hidden>
-    <div class="placeholder-panel">Gestão completa de produtos em construção.</div>
+   <div class="sec-head"><h2>Todos os produtos</h2></div>
+  <div class="grid">
+    <div class="card">
+      <div class="img"><span class="badge" style="background:var(--red)">Vence em 8h</span>🍅</div>
+      <div class="body">
+        <h3>Caixa de tomates (12kg)</h3>
+        <div class="meta">Lote #A102 · Venda</div>
+        <div class="foot"><span class="price">R$ 18,00</span><div class="acts"><span class="icb">✏️</span><span class="icb">⏸</span></div></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="img p"><span class="badge" style="background:var(--amber)">Vence em 3d</span>🍞</div>
+      <div class="body">
+        <h3>Pães artesanais (20un)</h3>
+        <div class="meta">Lote #B045 · Doação</div>
+        <div class="foot"><span class="price">Doação</span><div class="acts"><span class="icb">✏️</span><span class="icb">⏸</span></div></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="img"><span class="badge" style="background:var(--green)">Vence em 7d</span>🥬</div>
+      <div class="body">
+        <h3>Folhas verdes sortidas (8kg)</h3>
+        <div class="meta">Lote #C220 · Venda</div>
+        <div class="foot"><span class="price">R$ 22,00</span><div class="acts"><span class="icb">✏️</span><span class="icb">⏸</span></div></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="img"><span class="badge" style="background:var(--green)">Vence em 12d</span>🍊</div>
+      <div class="body">
+        <h3>Laranjas para suco (10kg)</h3>
+        <div class="meta">Lote #E188 · Doação</div>
+        <div class="foot"><span class="price">Doação</span><div class="acts"><span class="icb">✏️</span><span class="icb">⏸</span></div></div>
+      </div>
+    </div>
+    <div class="card paused">
+      <div class="img"><span class="badge" style="background:var(--ink-soft)">Pausado</span>🥕</div>
+      <div class="body">
+        <h3>Cenouras orgânicas (5kg)</h3>
+        <div class="meta">Lote #D310 · Venda</div>
+        <div class="foot"><span class="price">R$ 15,00</span><div class="acts"><span class="icb">✏️</span><span class="icb">▶️</span></div></div>
+      </div>
+    </div>
+  </div>
   </section>
 
   <section class="view" id="view-pedidos" hidden>
-    <div class="placeholder-panel">Histórico de pedidos em construção.</div>
+    <div class="sec-head"><h2>Pedidos recebidos</h2></div>
+  <div class="ord-list">
+    <div class="ord-card">
+      <div class="head"><span class="id">Pedido #2031</span><span class="ord-status andamento">Em preparo</span></div>
+      <div class="items">2x Caixa de tomates (12kg)</div>
+      <div class="foot"><span>Restaurante Sabor Caseiro</span><span>R$ 36,00</span></div>
+    </div>
+    <div class="ord-card">
+      <div class="head"><span class="id">Pedido #2028</span><span class="ord-status pronto">Pronto p/ retirada</span></div>
+      <div class="items">1x Folhas verdes sortidas (8kg)</div>
+      <div class="foot"><span>Maria F.</span><span>R$ 22,00</span></div>
+    </div>
+    <div class="ord-card">
+      <div class="head"><span class="id">Pedido #2015</span><span class="ord-status concluido">Concluído</span></div>
+      <div class="items">1x Pães artesanais (20un) · Doação</div>
+      <div class="foot"><span>ONG Mesa Solidária</span><span>Grátis</span></div>
+    </div>
+  </div>
   </section>
 
   <section class="view" id="view-financeiro" hidden>
     <div class="placeholder-panel">Extrato financeiro em construção.</div>
   </section>
 
-  <section class="view" id="view-relatorios" hidden>
-    <div class="placeholder-panel">Relatórios em construção.</div>
-  </section>
+  
 </main>
 <div class="pm-overlay" id="pm-overlay">
   <div class="pm-modal" role="dialog" aria-modal="true" aria-labelledby="pm-title">
