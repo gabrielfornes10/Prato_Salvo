@@ -76,9 +76,6 @@
 
   .sec-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;}
   .sec-head h2{font-size:18px;font-weight:700;margin:0;}
-  .tabs{display:flex;gap:6px;background:var(--white);padding:5px;border-radius:var(--r-full);box-shadow:var(--shadow);}
-  .tab{font-size:12px;font-weight:600;padding:7px 14px;border-radius:var(--r-full);color:var(--ink-soft);}
-  .tab.on{background:var(--purple);color:#fff;}
 
   .table-wrap{background:var(--white);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow);}
   table{width:100%;border-collapse:collapse;font-size:13.5px;}

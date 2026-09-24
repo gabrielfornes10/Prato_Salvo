@@ -22,6 +22,26 @@
   var backdrop = document.getElementById("sidebarBackdrop");
   var navLinks = document.querySelectorAll(".nav a[data-section]");
   var viewTitle = document.getElementById("viewTitle");
+  // -------------------- data de hoje --------------------
+
+function atualizarData() {
+  var elemento = document.getElementById('current-date');
+  if (!elemento) return;
+
+  var hoje = new Date();
+  var texto = hoje.toLocaleDateString('pt-BR', {
+    weekday: 'long',
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric'
+  });
+
+  // toLocaleDateString devolve tudo em minúsculas ("quarta-feira, 19...")
+  // — deixamos só a primeira letra maiúscula, igual ao design original
+  elemento.textContent = texto.charAt(0).toUpperCase() + texto.slice(1);
+}
+
+atualizarData();
 
   // -------------------- menu retrátil --------------------
 
