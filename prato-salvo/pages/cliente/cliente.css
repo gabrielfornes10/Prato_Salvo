@@ -80,7 +80,7 @@
   
   .sec-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;}
   .sec-head h3{font-size:16.5px;font-weight:700;margin:0;}
-  .sec-head .see{font-size:12.5px;font-weight:600;color:var(--coral);cursor:pointer;}
+  
 
   /* urgent items: horizontal scroll on mobile, grid on wider screens */
   .urgent-row{
