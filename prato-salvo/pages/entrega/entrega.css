@@ -1,0 +1,241 @@
+/**
+ * entrega.css
+ * Estilos exclusivos da tela de Rota de entrega.
+ * Tema escuro próprio (não usa as variáveis --coral/--purple do
+ * resto da plataforma) — isolado por rodar em seu próprio iframe.
+ */
+
+ :root{
+    --bg: #12151A;
+    --bg: #12151A;
+    --card: #1B1F26;
+    --card-2: #21262F;
+    --line: #2C323C;
+    --accent: #FF8A3D;
+    --accent-dim: #4A3324;
+    --mint: #3DDC97;
+    --text: #F3F1EC;
+    --text-muted: #90959E;
+    --font-display: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+    --font-body: 'Inter', ui-sans-serif, system-ui, sans-serif;
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  @media (prefers-color-scheme: light){
+    :root:not([data-theme="dark"]){
+      --bg: #12151A;
+      --card: #1B1F26;
+    }
+  }
+  *{ box-sizing: border-box; }
+  html, body{
+    height: 100%;
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+  }
+  body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 24px 16px;
+  }
+  .phone{
+    width: 100%;
+    max-width: 400px;
+    background: var(--card);
+    border-radius: 28px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    box-shadow: 0 30px 60px -20px rgba(0,0,0,0.5);
+  }
+
+  /* header */
+  .topbar{
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    padding: 20px 20px 4px;
+  }
+  .topbar .brand{
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: 0.2px;
+  }
+  .topbar .order-code{
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+
+  /* status */
+  .status-row{
+    padding: 6px 20px 16px;
+  }
+  .status-title{
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 20px;
+    margin: 0 0 10px;
+  }
+  .steps{
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .step{
+    flex: 1;
+    height: 4px;
+    border-radius: 3px;
+    background: var(--line);
+  }
+  .step.done{ background: var(--mint); }
+  .step.active{ background: var(--accent); }
+  .step-labels{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+    font-size: 10.5px;
+    color: var(--text-muted);
+  }
+  .step-labels span.on{ color: var(--text); }
+
+  /* map */
+  .map-wrap{
+    position: relative;
+    margin: 4px 16px 0;
+    border-radius: 18px;
+    overflow: hidden;
+    background: #171B21;
+    border: 1px solid var(--line);
+  }
+  .map-wrap svg{ display: block; width: 100%; height: auto; }
+  .eta-chip{
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: rgba(18,21,26,0.88);
+    backdrop-filter: blur(6px);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 7px 14px 7px 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .eta-chip .dot{
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 0 4px var(--accent-dim);
+  }
+  .eta-chip .eta-time{
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 1;
+  }
+  .eta-chip .eta-sub{
+    font-size: 10px;
+    color: var(--text-muted);
+  }
+
+  /* courier card */
+  .courier{
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 18px 20px 6px;
+  }
+  .avatar{
+    width: 52px; height: 52px;
+    border-radius: 50%;
+    background: linear-gradient(145deg, var(--accent), #C85A18);
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 18px;
+    color: #1A0F06;
+    flex-shrink: 0;
+  }
+  .courier-info{ flex: 1; min-width: 0; }
+  .courier-name{
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 16px;
+    margin: 0 0 2px;
+  }
+  .courier-sub{
+    font-size: 12.5px;
+    color: var(--text-muted);
+  }
+  .call-btn{
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    background: var(--card-2);
+    border: 1px solid var(--line);
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+  .call-btn svg{ width: 18px; height: 18px; }
+
+  .details{
+    display: flex;
+    gap: 10px;
+    padding: 14px 20px 22px;
+  }
+  .detail-box{
+    flex: 1;
+    background: var(--card-2);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 10px 12px;
+  }
+  .detail-label{
+    font-size: 10.5px;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+  }
+  .detail-value{
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 14.5px;
+    letter-spacing: 0.3px;
+  }
+
+  /* desktop: wider (landscape) instead of taller. Mobile stays exactly as defined above. */
+  @media (min-width: 860px){
+    body{ padding: 32px; }
+    .phone{
+      width: 100%;
+      max-width: 1400px;
+      border-radius: 32px;
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      grid-template-rows: auto auto 1fr auto;
+      grid-template-areas:
+        "map topbar"
+        "map status"
+        "map courier"
+        "map details";
+    }
+    .topbar{ grid-area: topbar; padding: 24px 26px 4px; }
+    .status-row{ grid-area: status; padding: 6px 26px 14px; }
+    .courier{ grid-area: courier; padding: 14px 26px 6px; align-self: end; }
+    .details{ grid-area: details; padding: 14px 26px 26px; }
+    .map-wrap{
+      grid-area: map;
+      margin: 20px 0 20px 20px;
+      border-radius: 22px;
+      height: auto;
+      align-self: stretch;
+      display: flex;
+    }
+    .map-wrap svg{ width: 100%; height: 100%; }
+    .status-title{ font-size: 22px; }
+    .avatar{ width: 58px; height: 58px; font-size: 19px; }
+    .courier-name{ font-size: 17px; }
+  }

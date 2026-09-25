@@ -30,7 +30,8 @@
     landing: document.getElementById("view-landing"),
     cliente: document.getElementById("view-cliente"),
     fornecedor: document.getElementById("view-fornecedor"),
-    admin: document.getElementById("view-admin")
+    admin: document.getElementById("view-admin"),
+    entrega: document.getElementById("view-entrega")
     // cadastro: document.getElementById("view-cadastro")
   };
 

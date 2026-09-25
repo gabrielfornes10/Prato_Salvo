@@ -1,10 +1,3 @@
-/**
- * cliente-bridge.js
- * ---------------------------------------------------------------
- * Integração do App do Cliente com o shell/router externo.
- * Clicar no selo "🍅 Prato Salvo · Cliente" retorna à página inicial.
- * ---------------------------------------------------------------
- */
 (function () {
   function irPara(destino) {
     parent.postMessage({ psNav: destino }, "*");
@@ -18,4 +11,10 @@
       irPara("landing");
     });
   }
+
+  // quando o cliente.js avisar que uma compra foi concluída,
+  // pede ao shell pra abrir a tela de acompanhamento da entrega
+  document.addEventListener("pedido-finalizado", function () {
+    irPara("entrega");
+  });
 })();

@@ -164,21 +164,34 @@ input?.addEventListener('input', aplicarFiltros);
     if(e.target === overlay) closeBuyModal();
   });
 
-  bmConfirm.addEventListener('click', () => {
-    const retirada = document.querySelector('input[name="bm-retirada"]:checked').closest('label').textContent.trim();
-    const pagamento = document.querySelector('input[name="bm-pagto"]:checked').closest('label').textContent.trim();
-    addToCart({
-      emoji: bmThumb.textContent,
-      name: bmName.textContent,
-      supplier: bmSupplier.textContent,
-      unitPrice: currentUnitPrice,
-      isFree: currentIsFree,
-      qty: currentQty,
-      retirada, pagamento
-    });
-    closeBuyModal();
+ bmConfirm.addEventListener('click', () => {
+  const retiradaInput = document.querySelector('input[name="bm-retirada"]:checked');
+  const retiradaTipo = retiradaInput.value; // "retirar" ou "entrega"
+  const retirada = retiradaInput.closest('label').textContent.trim();
+  const pagamento = document.querySelector('input[name="bm-pagto"]:checked').closest('label').textContent.trim();
+
+  const item = {
+    emoji: bmThumb.textContent,
+    name: bmName.textContent,
+    supplier: bmSupplier.textContent,
+    unitPrice: currentUnitPrice,
+    isFree: currentIsFree,
+    qty: currentQty,
+    retirada, pagamento
+  };
+
+  closeBuyModal();
+
+  if (retiradaTipo === 'retirar') {
+    // retirada no local: pula o carrinho e vai direto pra "Meus pedidos"
+    criarPedido(item);
+    openBagModal('pedidos');
+  } else {
+    // entrega: mantém o fluxo normal (carrinho → finalizar → acompanhar entrega)
+    addToCart(item);
     openBagModal('sacola');
-  });
+  }
+});
 
   /* ---------------- sacola / pedidos ---------------- */
   const cart = [];
@@ -190,6 +203,20 @@ input?.addEventListener('input', aplicarFiltros);
   const tabSacola = document.getElementById('tab-sacola');
   const tabPedidos = document.getElementById('tab-pedidos');
   const panelSacola = document.getElementById('panel-sacola');
+  let proximoPedidoId = 1043; // os pedidos #1042/#1039/#1021 já existiam fixos no HTML
+
+function criarPedido(item){
+  const precoLabel = item.isFree ? 'Grátis' : formatBRL(item.unitPrice * item.qty);
+  const card = document.createElement('div');
+  card.className = 'ord-card';
+  card.innerHTML = `
+    <div class="head"><span class="id">Pedido #${proximoPedidoId}</span><span class="ord-status andamento">Em preparo</span></div>
+    <div class="items">${item.qty}x ${item.name}${item.isFree ? ' · Doação' : ''}</div>
+    <div class="foot"><span>${item.supplier}</span><span>${precoLabel}</span></div>
+  `;
+  panelPedidos.prepend(card);
+  proximoPedidoId++;
+}
   const panelPedidos = document.getElementById('panel-pedidos');
   const bagItemsList = document.getElementById('bag-items-list');
   const bagEmptyState = document.getElementById('bag-empty-state');
@@ -316,14 +343,15 @@ input?.addEventListener('input', aplicarFiltros);
     if(e.target === bagOverlay) closeBagModal();
   });
 
-  bagCheckout.addEventListener('click', () => {
-    if(cart.length === 0) return;
-    cart.length = 0;
-    renderCartBar();
-    switchBagTab('pedidos');
-    renderBagItems();
-    alert('Pedido finalizado com sucesso! Acompanhe o status em "Meus pedidos".');
-  });
+ bagCheckout.addEventListener('click', () => {
+  if(cart.length === 0) return;
+  cart.length = 0;
+  renderCartBar();
+  switchBagTab('pedidos');
+  renderBagItems();
+  closeBagModal();
+  document.dispatchEvent(new CustomEvent('pedido-finalizado'));
+});
 
   renderCartBar();
 });
